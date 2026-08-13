@@ -173,6 +173,7 @@ img, svg { display: block; max-width: 100%; }
   cursor: pointer;
   text-decoration: none;
   transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
               transform var(--duration-fast) var(--ease-out),
               box-shadow var(--duration-fast) var(--ease-out),
               border-color var(--duration-fast) var(--ease-out);
@@ -197,11 +198,17 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text-primary);
   padding: 16px 28px;
 }
-.btn-on-dark:hover {
+.btn-on-dark:hover,
+.btn-on-dark:focus-visible {
+  background: #FF6E00;
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px -12px rgba(255,110,0,0.45);
+  outline: none;
 }
-.btn-on-dark:hover .brand-chevron { animation: chevron-loop 600ms cubic-bezier(0.65,0,0.35,1); }
+.btn-on-dark:focus-visible { outline: 2px solid #FF6E00; outline-offset: 3px; }
+.btn-on-dark:hover .brand-chevron,
+.btn-on-dark:focus-visible .brand-chevron { animation: chevron-loop 600ms cubic-bezier(0.65,0,0.35,1); }
 
 .btn-secondary {
   background: transparent;
@@ -501,7 +508,8 @@ img, svg { display: block; max-width: 100%; }
    ET ENSUITE — steps
    ============================================================ */
 .steps-head { text-align: center; max-width: 40rem; margin: 0 auto 64px; }
-.steps-head .eyebrow { margin-bottom: 18px; }
+.steps-head .eyebrow { margin-bottom: 18px; max-width: none; text-align: center; }
+.steps-head h2 { text-align: center; }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
