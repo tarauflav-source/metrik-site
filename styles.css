@@ -534,6 +534,70 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   AUTO-QUALIFICATION
+   ============================================================ */
+.aq-section { border-top: 1px solid var(--border-subtle); }
+.aq-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.aq-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+}
+.aq-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.aq-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+  transition: transform 300ms ease-out;
+}
+.aq-card:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+.aq-card p {
+  margin: 0;
+  max-width: 32ch;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #3D3934;
+  text-wrap: pretty;
+}
+.aq-icon {
+  width: 48px;
+  height: 48px;
+  stroke: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .aq-title { font-size: 2.5rem; }
+  .aq-grid { grid-template-columns: 1fr; gap: 16px; }
+  .aq-card { padding: 40px 28px; }
+}
+
+/* ============================================================
    CTA SECTION
    ============================================================ */
 .cta-block { text-align: center; }
